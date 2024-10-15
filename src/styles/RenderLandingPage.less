@@ -16,6 +16,12 @@
     height: 20vh;
     margin-bottom: 10%;
 }
+//created new button container for bottom button or any button that needs to be centered
+.btn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .hrf-logo-img-container img {
     height: 64px;
@@ -40,11 +46,13 @@
     color: @white;
     font-size: 1.2rem;
 }
-
+//for these graphs I had to make 3 different styles to be able to align everything correctly
 .graphs-section {
 display: flex;
 align-items: flex-start;
 justify-content: space-evenly;
+font-family: 'acumin';
+font-size: 1.1rem;
 };
 .graph-cont {
     display: flex;
@@ -52,19 +60,21 @@ justify-content: space-evenly;
     align-items: center;
 }
 .graph-img{
-    height: 250px;
-    width: 200px;
-    padding-bottom: 10px;
+    height: 200px;
+    width: 380px;
+    padding-bottom: 30px;
     object-fit: contain;
 }
-.view-more-data-btn-container {
+//the buttons I put in a flex container and spaced the buttons out 
+.under-graphs-btn-container {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
+    gap: 30px;
     height: 44px;
     width: 180px;
     margin-bottom: 10%;
     margin-left: 40%;
-    margin-top: 10%;
+    margin-top: 5%;
 }
 
 .middle-section {
@@ -89,9 +99,32 @@ justify-content: space-evenly;
     font-size: 1.4rem;
 }
 
-// .bottom-section {
-//      ADD THIS BACK IN WHEN YOU HAVE A BOTTOM SECTION
-// }
+//added bottom sections and styles for the colums
+.bottom-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'acumin';
+}
+.bottom-header1{
+    font-family: 'acumin';
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 52px;
+    margin: 15%;
+}
+.bottom-header2{
+    font-size: 45px;
+}
+.bottom-information{
+    flex-basis: calc(33.3% - 10px);
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 10%;
+}
+
 
 .back-to-top {
     width: 8%;

@@ -43,19 +43,21 @@ function RenderLandingPage(props) {
         <h1 class='h1-under-img'>Search Grant Rates Over Time</h1>
       </div>
       </div>
-      {/* Graphs Section: Add code here for the graphs section for your first ticket */}
-      {/* <div className="graphs-section"> */}
-      <div className="view-more-data-btn-container">
-        <Button
+  
+      <div className="under-graphs-btn-container" //changed class name
+      >
+        <Button //added the classes to buttons
+          className='ant-btn'
           type="default"
-          style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+          style={{background:'#404C4A', color:'#FFFFFF'}}
           onClick={() => history.push('/graphs')}
         >
           View the Data
         </Button>
         <Button
+          className='ant-btn'
           type="default"
-          style={{ backgroundColor: '#404C4A', color: '#FFFFFF' }}
+          style={{background:'#404C4A', color:'#FFFFFF'}}
           onClick={() => history.push('/graphs')}
         >
           Download the Data
@@ -79,9 +81,36 @@ function RenderLandingPage(props) {
           </h3>
         </div>
       </div>
-      <div>
-        {/* Bottom Section: Add code here for the graphs section for your first ticket */}
-        {/* <div className="bottom-section">*/}
+      <div> 
+        <h1 className='bottom-header1'>Systemic Disparity Insights</h1>
+        <div className='bottom-section' /*put bottom section under the header to be able to style the bottom section properly */>
+        <div className='bottom-information'>
+          <h2 className='bottom-header2'>36%</h2>
+        By the end of the Trump administration, the average asylum office grant rate had fallen 36 percent from an average of 44 percent in fiscal year 2016 to 28 percent in fiscal year 2020.
+        </div>
+        <div className='bottom-information'>
+          <h2 className='bottom-header2'>5%</h2>
+        The New York asylum office grant rate dropped to 5 percent in fiscal year 2020.
+        </div>
+        <div className='bottom-information'>
+          <h2 className='bottom-header2'>6x Lower</h2>
+        Between fiscal year 2017 and 2020, the New York asylum office’s average grant rate was six times lower than the San Francisco asylum office.
+        </div>
+        </div>
+
+        <a //added link to readmore button and styled it
+         href='https://humanrightsfirst.org/library/uscis-records-reveal-systemic-disparities-in-asylum-decisions/'>
+          <div className='btn-container'>
+            <button
+            className='ant-btn'
+            type='default'
+            style={{background:'#404C4A', color:'#FFFFFF'}}
+            > 
+            Read More 
+            </button>
+          </div>
+        </a>
+
         <p onClick={() => scrollToTop()} className="back-to-top">
           Back To Top ^
         </p>

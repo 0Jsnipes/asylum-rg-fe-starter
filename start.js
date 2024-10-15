@@ -7,7 +7,7 @@ let cmdArray = [];
 
 majorVersion < 17 ? cmdArray = ['craco', '--max_old_space_size=4096', 'start'] : cmdArray = ['craco', '--max_old_space_size=4096', '--openssl-legacy-provider', 'start'];
 
-const ls = spawn(/^win/.test(process.platform) ? 'npx.cmd' : 'npx', cmdArray, {shell: true });
+const ls = spawn(/^win/.test(process.platform) ? 'npx.cmd' : 'npx', cmdArray, {shell: true }); //npm start was not working added 'shell:true' 
 
 ls.stdout.on("data", data => {
     console.log(`${data}`);
