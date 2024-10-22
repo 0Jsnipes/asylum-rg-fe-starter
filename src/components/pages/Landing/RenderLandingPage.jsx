@@ -44,7 +44,7 @@ function RenderLandingPage(props) {
       </div>
       </div>
   
-      <div className="under-graphs-btn-container" //changed class name
+      <div className="under-graphs-btn-container" //changed class name to make more sense
       >
         <Button //added the classes to buttons
           className='ant-btn'
