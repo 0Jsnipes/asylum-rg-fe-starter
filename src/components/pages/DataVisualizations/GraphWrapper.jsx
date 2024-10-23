@@ -15,6 +15,7 @@ import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 
 const { background_color } = colors;
+const URL = 'https://hrf-asylum-be-b.herokuapp.com/cases';
 
 function GraphWrapper(props) {
   const { set_view, dispatch } = props;
@@ -75,7 +76,7 @@ function GraphWrapper(props) {
 
     if (office === 'all' || !office) {
       axios
-        .get(process.env.REACT_APP_API_URI, {
+        .get(`${URL}/fiscalSummary`, {
           // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
           params: {
             from: years[0],
@@ -83,14 +84,15 @@ function GraphWrapper(props) {
           },
         })
         .then(result => {
-          stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
+          console.log(result.data);
+          stateSettingCallback(view, office, result.data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
         })
         .catch(err => {
           console.error(err);
         });
     } else {
       axios
-        .get(process.env.REACT_APP_API_URI, {
+        .get(`${URL}/citizenshipSummary`, {
           // mock URL, can be simply replaced by `${Real_Production_URL}/summary` in prod!
           params: {
             from: years[0],
@@ -99,7 +101,7 @@ function GraphWrapper(props) {
           },
         })
         .then(result => {
-          stateSettingCallback(view, office, test_data); // <-- `test_data` here can be simply replaced by `result.data` in prod!
+          stateSettingCallback(view, office, yearResults); // <-- `test_data` here can be simply replaced by `result.data` in prod!
         })
         .catch(err => {
           console.error(err);
