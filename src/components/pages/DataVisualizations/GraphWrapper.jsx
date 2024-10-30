@@ -16,6 +16,7 @@ import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 const { background_color } = colors;
 const URL = 'https://hrf-asylum-be-b.herokuapp.com/cases';//made the API a variable to make it easier to change when/if needed
 
+
 function GraphWrapper(props) {
   const { set_view, dispatch } = props;
   let { office, view } = useParams();
@@ -50,6 +51,8 @@ function GraphWrapper(props) {
         break;
     }
   }
+};
+
   async function updateStateWithNewData(years, view, office, stateSettingCallback) {
 //made this an async function to handle both responses
   let fiscalSummary = await axios
