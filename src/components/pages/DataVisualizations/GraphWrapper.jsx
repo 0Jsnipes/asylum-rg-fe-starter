@@ -14,7 +14,7 @@ import { colors } from '../../../styles/data_vis_colors';
 import ScrollToTopOnMount from '../../../utils/scrollToTopOnMount';
 
 const { background_color } = colors;
-const URL = 'https://hrf-asylum-be-b.herokuapp.com/cases';
+const URL = 'https://hrf-asylum-be-b.herokuapp.com/cases';//made the API a variable to make it easier to change when/if needed
 
 function GraphWrapper(props) {
   const { set_view, dispatch } = props;
@@ -69,12 +69,12 @@ function GraphWrapper(props) {
       } 
   });
     fiscalSummary.data["citizenshipResults"] = citizenshipSummary.data;  //injected data from the citizenshipSummary into the fiscalsummary under 'citizenshipresults' key.
-    fiscalSummary = [fiscalSummary.data]; //it need to be an array to iterate over the data
+    fiscalSummary = [fiscalSummary.data]; //it needed to be an array to iterate over the data
   stateSettingCallback(view, office,fiscalSummary);
   }
 
   const clearQuery = (view, office) => {
-    dispatch(resetVisualizationQuery(view, office));
+    dispatch(resetVisualizationQuery(view, null));
   };
   return (
     <div
