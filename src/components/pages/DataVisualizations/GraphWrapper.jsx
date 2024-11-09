@@ -51,7 +51,7 @@ function GraphWrapper(props) {
         break;
     }
   }
-};
+
 
   async function updateStateWithNewData(years, view, office, stateSettingCallback) {
 //made this an async function to handle both responses
