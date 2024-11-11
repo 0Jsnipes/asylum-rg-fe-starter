@@ -25,7 +25,6 @@ import Logo from './styles/Images/WhiteLogo.png';
 const store = configureStore({ reducer });
 const { primary_accent_color } = colors;
 
-// Header Component
 function HeaderContent() {
   const { isAuthenticated } = useAuth0();
 
@@ -49,19 +48,19 @@ function HeaderContent() {
         <a href="/" style={{ color: '#E2F0F7', paddingRight: '20px' }}>Home</a>
         <a href="/graphs" style={{ color: '#E2F0F7', paddingRight: '20px' }}>Graphs</a>
         <a href="/profile" style={{ color: '#E2F0F7', paddingRight: '20px' }}>Profile</a>
-        {isAuthenticated ? <LogoutButton /> : <LoginButton />}
+        {isAuthenticated ? <LogoutButton /> : <LoginButton />}{/*if the user is auth it will display logout otherwise login*/}
       </div>
     </div>
   );
 }
 
-// Main App Component
+
 function App() {
   const { Footer, Header } = Layout;
 
   return (
     <Layout>
-      {/* Header */}
+    
       <Header
         style={{
           height: '10vh',
@@ -73,13 +72,13 @@ function App() {
         <HeaderContent />
       </Header>
 
-      {/* Main Routes */}
+    
       <Switch>
         <Route exact path="/" component={LandingPage} />
         <Route path="/graphs" component={GraphsContainer} />
         <Route
           path="/profile"
-          component={withAuthenticationRequired(Profile, {
+          component={withAuthenticationRequired(Profile, {//requiring login auth to display profile if not logged it it takes them to the login portal
             onRedirecting: () => <div>Loading...</div>,
           })}
         />

@@ -9,7 +9,7 @@ const Profile = () => {
   }
 
   return (
-    isAuthenticated && (
+    isAuthenticated && ( //user must be logged in to view profile
       <div className="profile-container" style={styles.container}>
         <img
           src={user.picture}

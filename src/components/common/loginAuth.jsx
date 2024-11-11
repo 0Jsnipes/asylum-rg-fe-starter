@@ -15,7 +15,7 @@ function LoginButton() {
         backgroundColor: primary_accent_color, 
         border: 'none', 
         cursor: 'pointer', 
-        fontSize: '14px'}}
+        fontSize: '14px'}}//added the same styles to this as the header
     >
       Log In
     </button>
